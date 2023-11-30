@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">FlashcardApp</string>
+    <string name="flashcard">FLASHCARD</string>
+    <string name="create_flashcard">Create Category</string>
+    <string name="button">+</string>
+    <string name="done">Done</string>
+    <string name="delete_card">Delete Card</string>
+    <string name="delete_deck">Delete Deck</string>
+    <string name="edit">Edit Card</string>
+    <string name="deck_title">Deck Title</string>
+    <string name="create">Create</string>
+    <string name="rename">Rename</string>
+    <string name="add">Add Card</string>
+    <string name="home">Home</string>
+</resources>
