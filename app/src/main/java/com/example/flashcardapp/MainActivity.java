@@ -1,7 +1,6 @@
 package com.example.flashcardapp;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,9 +11,9 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,8 +24,7 @@ public class MainActivity extends AppCompatActivity {
     ArrayAdapter<FlashcardDeck> adapter;
     List<FlashcardDeck> deckList;
     ListView listView;
-    Toolbar toolbar;
-    //lastElement = Iterables.getLast(iterableList);
+    ImageView list, appName, lottieAnimationView, splashImg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,22 +40,31 @@ public class MainActivity extends AppCompatActivity {
         }
         flashcardsManager.setDecks(deckList);
 
-        // Set toolbar
-        toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        // Set the title of the Toolbar
-        getSupportActionBar().setTitle("Home");
+        listView = findViewById(R.id.flashcardListView);
+        createCategoryButton = findViewById(R.id.flashcardButton);
+        appName = findViewById(R.id.title);
+        splashImg = findViewById(R.id.bg);
+        lottieAnimationView = findViewById(R.id.editLottie);
+
+        // Set initial translation values to position views outside of the visible area
+        splashImg.setTranslationY(-3000);
+        appName.setTranslationY(2000);
+        lottieAnimationView.setTranslationY(2000);
+        createCategoryButton.setTranslationX(-2000);
+        listView.setTranslationX(2000);
+
+        splashImg.animate().translationY(0).setDuration(1000).setStartDelay(0);
+        appName.animate().translationY(0).setDuration(1000).setStartDelay(0);
+        createCategoryButton.animate().translationX(0).setDuration(1000).setStartDelay(500);
+        listView.animate().translationX(0).setDuration(1000).setStartDelay(500);
+        lottieAnimationView.animate().translationY(0).setDuration(1000).setStartDelay(500);
 
         // Set adapter
         adapter = new ArrayAdapter<>(this, R.layout.list_view, deckList);
 
-        // ListView
-        listView = findViewById(R.id.flashcardListView);
         listView.setAdapter(adapter);
 
 
-        // Button
-        createCategoryButton = findViewById(R.id.flashcardButton);
         createCategoryButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -77,11 +84,16 @@ public class MainActivity extends AppCompatActivity {
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        Toast.makeText(this, "Swipe To Delete", Toast.LENGTH_SHORT).show();
         int itemId = item.getItemId();
 
         if (itemId == R.id.delete_item) {
-            deleteFlashcardDeck();
+            if (deckList == null || deckList.isEmpty()) {
+                Toast.makeText(this, "No Decks To Delete", Toast.LENGTH_SHORT).show();
+            }
+            else {
+                Toast.makeText(this, "Swipe To Delete", Toast.LENGTH_SHORT).show();
+                deleteFlashcardDeck();
+            }
             return true;
         }
         else {
@@ -165,6 +177,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void createCategory(){
         Toast.makeText(this, "Create Flashcard Deck", Toast.LENGTH_SHORT).show();
+
+
+
+
+
+
 
         Intent intent = new Intent(this, CreateCategory.class);
         startActivity(intent);
