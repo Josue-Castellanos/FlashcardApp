@@ -6,6 +6,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,9 +22,18 @@ public class CreateFlashcard extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         // Enable the Up button
-        ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+
+        // Null check for the active deck
+        FlashcardDeck activeDeck = MainActivity.flashcardsManager.getActiveDeck();
+        if (activeDeck != null) {
+            // Get the custom title TextView
+            TextView deckTitle = findViewById(R.id.deckTitle);
+            if (deckTitle != null) {
+                // Set a custom title text
+                deckTitle.setText(MainActivity.flashcardsManager.getActiveDeck().toString());
+            }
         }
 
         // Add button listener
@@ -60,12 +70,15 @@ public class CreateFlashcard extends AppCompatActivity {
         String answer = answerEditText.getText().toString();
 
         // create flashcard, add new card to the flashcard list
-        MainActivity.flashcardsManager.getActiveDeck().addFlashcard(new Flashcard(answer, question));
-        // save changes
-        MainActivity.preferencesManager.saveObjectList(MainActivity.flashcardsManager.getDecks());
-        // clear the TextView boxes to add another card
-        ((EditText) findViewById(R.id.questionText)).setText("");
-        ((EditText) findViewById(R.id.answerText)).setText("");
+        FlashcardDeck activeDeck = MainActivity.flashcardsManager.getActiveDeck();
+        if (activeDeck != null) {
+            activeDeck.addFlashcard(new Flashcard(answer, question));
+            // save changes
+            MainActivity.preferencesManager.saveObjectList(MainActivity.flashcardsManager.getDecks());
+            // clear the TextView boxes to add another card
+            ((EditText) findViewById(R.id.questionText)).setText("");
+            ((EditText) findViewById(R.id.answerText)).setText("");
+        }
     }
 
     public void playButtonActivity() {

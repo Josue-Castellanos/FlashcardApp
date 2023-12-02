@@ -43,23 +43,36 @@ public class PlayFlashcards extends AppCompatActivity {
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
 
-            actionBar.setTitle(MainActivity.flashcardsManager.getActiveDeck().toString());
+            FlashcardDeck activeDeck = MainActivity.flashcardsManager.getActiveDeck();
+            if (activeDeck != null) {
+                String title = activeDeck.toString();
+                if (title != null) {
+                    actionBar.setTitle(title);
 
-            // Remove the default title
-            actionBar.setDisplayShowTitleEnabled(false);
+                    // Remove the default title
+                    actionBar.setDisplayShowTitleEnabled(false);
 
-            // Get the custom title TextView
-            TextView deckTitle = findViewById(R.id.deckTitle);
-            if (deckTitle != null) {
-                // Set a custom title text
-                deckTitle.setText(MainActivity.flashcardsManager.getActiveDeck().toString());
+                    // Get the custom title TextView
+                    TextView deckTitle = findViewById(R.id.deckTitle);
+                    if (deckTitle != null) {
+                        // Set a custom title text
+                        deckTitle.setText(MainActivity.flashcardsManager.getActiveDeck().toString());
+                    }
+                }
             }
         }
 
         // Now Create Animator Objects and Flashcard Manager Object
         // Now we will add the animator to our card
-        currQuestion = MainActivity.flashcardsManager.getCurrentFlashcard().getQuestion();
-        currAnswer = MainActivity.flashcardsManager.getCurrentFlashcard().getAnswer();
+        Flashcard currentFlashcard = MainActivity.flashcardsManager.getCurrentFlashcard();
+        if (currentFlashcard != null) {
+            currQuestion = currentFlashcard.getQuestion();
+            currAnswer = currentFlashcard.getAnswer();
+        } else {
+            // Handle the case where there is no current flashcard
+            // You might want to show a message or take appropriate action
+            Log.d("PlayFlashcards", "No current flashcard found");
+        }
 
         // we now need to modify the camera scale
         scale = getResources().getDisplayMetrics().density;

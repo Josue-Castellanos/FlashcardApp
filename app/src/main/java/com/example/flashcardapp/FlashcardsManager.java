@@ -83,8 +83,12 @@ public class FlashcardsManager {
         activeDeck.getFlashcards().get(getCurrentFlashcardIndex()).setQuestion(question);
 
     }
-    public int getActiveDeckSize () {
-        return activeDeck.getFlashcards().size();
+    public int getActiveDeckSize() {
+        if (activeDeck != null && activeDeck.getFlashcards() != null) {
+            return activeDeck.getFlashcards().size();
+        } else {
+            return 0;
+        }
     }
     public int restIndex() {
         if (currentIndex + 1 == activeDeck.getFlashcards().size()) {

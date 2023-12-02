@@ -12,4 +12,5 @@
     <string name="rename">Rename</string>
     <string name="add">Add Card</string>
     <string name="home">Home</string>
+    <string name="deckname">Deckname</string>
 </resources>

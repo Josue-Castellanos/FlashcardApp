@@ -5,6 +5,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -31,15 +32,21 @@ public class EditFlashcard extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        // Enable the Up button
-        ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        // Null check for the active deck
+        FlashcardDeck activeDeck = MainActivity.flashcardsManager.getActiveDeck();
+        if (activeDeck != null) {
+            // Get the custom title TextView
+            TextView deckTitle = findViewById(R.id.deckTitle);
+            if (deckTitle != null) {
+                // Set a custom title text
+                deckTitle.setText(MainActivity.flashcardsManager.getActiveDeck().toString());
+            }
         }
 
         // Add button listener
         Button save = findViewById(R.id.saveButton);
-
 
         save.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -8,6 +8,7 @@
     android:background="#F8F8F7"
     tools:context=".MainActivity">
 
+
     <ImageView
         android:id="@+id/bg"
         android:layout_width="match_parent"
@@ -32,43 +33,90 @@
         app:layout_constraintVertical_bias=".1" />
 
     <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/editLottie"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        app:layout_constraintBottom_toTopOf="@+id/title"
+        android:id="@+id/doneLottie"
+        android:layout_width="320dp"
+        android:layout_height="320dp"
+        app:layout_constraintBottom_toTopOf="@+id/flashcardListView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.25"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.4"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        app:layout_constraintVertical_bias="0.525"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
         app:lottie_rawRes="@raw/pink_img" />
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/deleteLottie"
+        android:layout_width="match_parent"
+        android:layout_height="320dp"
+        app:layout_constraintBottom_toTopOf="@+id/flashcardListView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        app:layout_constraintVertical_bias="0.525"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/delete" />
 
     <ListView
         android:id="@+id/flashcardListView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="80dp"
-        app:layout_constraintBottom_toTopOf="@+id/flashcardButton"
+        app:layout_constraintBottom_toTopOf="@id/relative_layout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title" />
 
-    <Button
-        android:id="@+id/flashcardButton"
-        android:layout_width="wrap_content"
-        android:layout_height="55dp"
-        android:background="@drawable/button_transparency"
-        android:layout_margin="8dp"
-        android:textColor="@color/white"
-        android:text="@string/create"
-        android:textSize="22sp"
-        android:gravity="top"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/flashcardListView" />
+    <RelativeLayout
+        android:id="@+id/relative_layout"
+        android:layout_width="match_parent"
+        android:layout_height="330dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/create_shape"
+        app:layout_constraintBottom_toBottomOf="parent">
 
+        <Button
+            android:id="@+id/button_show"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="220dp"
+            android:layout_height="60dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="6dp"
+            android:layout_marginBottom="6dp"
+            android:text="@string/create" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_layout_deckname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/button_show"
+            android:hint="@string/deckname"
+            android:layout_margin="16dp" >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="@color/white"
+                android:inputType="text"
+                android:textColor="@color/black" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/createButton"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@id/input_layout_deckname"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/button_transparency"
+            android:text="@string/create"
+            android:textColor="?attr/colorPrimary" />
+    </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

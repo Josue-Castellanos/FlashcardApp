@@ -21,16 +21,15 @@ public class IntroductoryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_introductory);
 
-
         logo = findViewById(R.id.logo);
         appName = findViewById(R.id.name);
         splashImg = findViewById(R.id.img);
         lottieAnimationView = findViewById(R.id.lottie);
 
-        splashImg.animate().translationY(-3000).setDuration(1000).setStartDelay(4000);
-        logo.animate().translationY(2000).setDuration(1000).setStartDelay(4000);
-        appName.animate().translationY(2000).setDuration(1000).setStartDelay(4000);
-        lottieAnimationView.animate().translationY(2000).setDuration(1000).setStartDelay(4300);
+        splashImg.animate().translationY(-2000).setDuration(2000).setStartDelay(2000);
+        logo.animate().translationY(2000).setDuration(2000).setStartDelay(1800);
+        appName.animate().translationY(2000).setDuration(2000).setStartDelay(1800);
+        lottieAnimationView.animate().translationY(2000).setDuration(2000).setStartDelay(1600);
 
         // Delay the start of MainActivity using Handler and include slide transition
         new Handler().postDelayed(new Runnable() {
@@ -43,7 +42,7 @@ public class IntroductoryActivity extends AppCompatActivity {
 
                 // Set up slide transition
                 Slide slide = new Slide(Gravity.START);
-                slide.setDuration(500); // Set the duration of the slide transition
+                slide.setDuration(300); // Set the duration of the slide transition
                 getWindow().setExitTransition(slide);
 
                 // Start MainActivity with the slide transition
@@ -51,6 +50,6 @@ public class IntroductoryActivity extends AppCompatActivity {
                 // Close this activity to prevent going back to it
                 finish();
             }
-        }, 5300); // 5300 milliseconds delay (4300 + 1000 for animations)
+        }, 2500);
     }
 }

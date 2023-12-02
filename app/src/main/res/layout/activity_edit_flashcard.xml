@@ -4,25 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#625757"
+    android:background="@drawable/bg"
     tools:context=".EditFlashcard">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
         android:elevation="4dp"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" >
+        <TextView
+            android:id="@+id/deckTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="100sp"
+            android:fontFamily="@font/candy_inc"
+            android:layout_gravity="center"
+            android:textColor="@color/white"/>
+    </androidx.appcompat.widget.Toolbar>
 
     <EditText
         android:id="@+id/answerText"
         android:layout_width="360dp"
         android:layout_height="220dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="192dp"
-        android:background="#FBF9F9"
+        android:layout_marginBottom="144dp"
+        android:background="@color/light_blue"
         android:ems="10"
         android:gravity="center"
         android:hint="Answer"
@@ -36,9 +45,9 @@
         android:id="@+id/questionText"
         android:layout_width="360dp"
         android:layout_height="220dp"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="112dp"
         android:layout_marginEnd="16dp"
-        android:background="#FBF9F9"
+        android:background="@color/light_purple"
         android:ems="10"
         android:gravity="center"
         android:hint="Question"
@@ -52,10 +61,15 @@
         android:id="@+id/saveButton"
         android:layout_width="182dp"
         android:layout_height="85dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="28dp"
+        android:background="@drawable/button_transparency"
         android:text="Save"
+        android:textColor="?attr/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/answerText" />
+        app:layout_constraintTop_toBottomOf="@+id/answerText"
+        app:layout_constraintVertical_bias="0.215" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
