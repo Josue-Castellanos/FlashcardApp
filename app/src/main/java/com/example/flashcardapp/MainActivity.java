@@ -293,21 +293,18 @@ public class MainActivity extends AppCompatActivity{
     @Override
     protected void onPause() {
         super.onPause();
-        onResume();
         Log.d("lifecycle","onPause invoked");
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        onRestart();
         Log.d("lifecycle","onStop invoked");
     }
 
     @Override
     protected void onRestart() {
         super.onRestart();
-        onStart();
         Log.d("lifecycle","onRestart invoked");
     }
 
