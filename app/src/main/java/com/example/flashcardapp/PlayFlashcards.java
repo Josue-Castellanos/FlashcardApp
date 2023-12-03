@@ -277,10 +277,10 @@ public class PlayFlashcards extends AppCompatActivity {
     private void updateRandomButtonState() {
         if (deckSize <= 1) {
             random.setEnabled(false);
-            random.setAlpha(0.5f); // Optional: You can also set the alpha to make it visually indicate it's disabled
+            random.setAlpha(0.5f);
         } else {
             random.setEnabled(true);
-            random.setAlpha(1f); // Optional: Reset alpha if needed
+            random.setAlpha(1f);
         }
     }
 }
