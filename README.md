@@ -13,11 +13,13 @@
   <a href="#download">Download</a> •
 </p>
 
+<p align="center">
+<img src=![8gyth7](https://github.com/Josue-Castellanos/FlashcardApp/assets/98190733/95803dbf-da93-4620-8a58-b21bc1645a0e) />
+</p>
 
-![8gyth7](https://github.com/Josue-Castellanos/FlashcardApp/assets/98190733/95803dbf-da93-4620-8a58-b21bc1645a0e)
 
 
-## Key Feautres
+## Key Features
 *
 *
 *
