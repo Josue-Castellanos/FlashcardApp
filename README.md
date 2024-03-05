@@ -1,7 +1,6 @@
 <h1 align="center">
-  <br>
+  
   ![text](https://github.com/Josue-Castellanos/FlashcardApp/assets/98190733/3a5eacb8-e145-43d3-a2a9-9bbb9d354b5c)
-  <br>
 </h1>
 
 <h4 align="center">
