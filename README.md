@@ -1,7 +1,7 @@
 <h1 align="center">
-  
-  ![text](https://github.com/Josue-Castellanos/FlashcardApp/assets/98190733/3a5eacb8-e145-43d3-a2a9-9bbb9d354b5c)
+  <img src="https://github.com/Josue-Castellanos/FlashcardApp/assets/98190733/3a5eacb8-e145-43d3-a2a9-9bbb9d354b5c" style="width: 300px; height: auto;" alt="text">
 </h1>
+
 
 <h4 align="center">
   A minimal Flashcard study app built on top of <a href="https://developer.android.com/studio" target="_blank">Android Studio Iguana </a>.
