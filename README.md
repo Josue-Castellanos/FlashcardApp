@@ -11,18 +11,16 @@
   <a href="#key-features">Key Features </a> •
   <a href="#how-to-use">How To Use </a> •
   <a href="#download">Download </a> •
-  <a href="#what-to-improve">Download</a> •
+  <a href="#what-to-improve">What To Improve</a> •
 </p>
 
-<p align="center">
-  <img src="![New Project](https://github.com/Josue-Castellanos/FlashcardApp/assets/98190733/80d6a16b-e1b6-440d-82a0-05bf3014e93a)" />
-</p>
+
+https://github.com/Josue-Castellanos/FlashcardApp/assets/98190733/6964edeb-6527-4870-9bd4-28b76b6ba003
 
 
 
 
 ## Key Features
-
 
 
 * Create flashcard deck
