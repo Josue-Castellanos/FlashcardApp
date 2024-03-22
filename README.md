@@ -15,10 +15,13 @@
 </p>
 
 <p align="center">
-  <img src="https://github.com/Josue-Castellanos/FlashcardApp/assets/98190733/95803dbf-da93-4620-8a58-b21bc1645a0e" />
+  <img src="https://github.com/Josue-Castellanos/FlashcardApp/assets/98190733/05d9a8b0-cf5b-41ad-84f1-9ddff4ec68fd" />
 </p>
 
 ## Key Features
+
+
+
 * Create flashcard deck
   - Save deck as Shared Preference
 * Edit/Delete flashcard deck
