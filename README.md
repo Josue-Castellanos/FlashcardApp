@@ -15,7 +15,7 @@
 </p>
 
 <p align="center">
-  <img src="https://github.com/Josue-Castellanos/FlashcardApp/assets/98190733/ac8e9c00-6477-43c3-afb3-149adce7d563" />
+  <img src="![New Project](https://github.com/Josue-Castellanos/FlashcardApp/assets/98190733/80d6a16b-e1b6-440d-82a0-05bf3014e93a)" />
 </p>
 
 
