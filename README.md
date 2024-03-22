@@ -15,8 +15,11 @@
 </p>
 
 <p align="center">
-  <img src="https://github.com/Josue-Castellanos/FlashcardApp/assets/98190733/05d9a8b0-cf5b-41ad-84f1-9ddff4ec68fd" />
+  <img src="https://github.com/Josue-Castellanos/FlashcardApp/assets/98190733/ac8e9c00-6477-43c3-afb3-149adce7d563" />
 </p>
+
+
+
 
 ## Key Features
 
